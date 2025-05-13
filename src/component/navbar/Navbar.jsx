@@ -21,7 +21,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 Home
@@ -33,7 +33,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 Skills
@@ -45,7 +45,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 Projects
@@ -57,7 +57,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 Services
@@ -69,7 +69,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 About
@@ -81,7 +81,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-medium tracking-wide text-[#0dccf2] transition-colors duration-200"
-                    : "font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-[#0dccf2]"
+                    : "font-medium tracking-wide text-gray-200 transition-colors duration-200 hover:text-[#0dccf2]"
                 }
               >
                 Contact
