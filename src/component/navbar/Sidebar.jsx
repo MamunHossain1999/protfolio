@@ -7,7 +7,7 @@ const Sidebar = ({ onClose }) => {
     <div className="lg:hidden bg-orange-500 text-white px-6 py-4 space-y-4">
       {[
         { to: "/", label: "Home" },
-        { to: "/skill", label: "Skills" },
+        { to: "/skills", label: "Skills" },
         { to: "/projects", label: "Projects" },
         { to: "/services", label: "Services" },
         { to: "/about", label: "About" },

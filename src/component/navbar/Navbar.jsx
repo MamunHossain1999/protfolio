@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul className="lg:flex items-center gap-4 hidden">
           {[
             { to: "/", label: "Home" },
-            { to: "/skill", label: "Skills" },
+            { to: "/skills", label: "Skills" },
             { to: "/projects", label: "Projects" },
             { to: "/services", label: "Services" },
             { to: "/about", label: "About" },
