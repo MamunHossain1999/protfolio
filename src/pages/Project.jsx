@@ -1,68 +1,114 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-const ProjectCard = ({ project, onClick }) => (
-    <motion.div
-      className="w-full sm:w-1/2 lg:w-1/3 p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-4">
-          <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
-          <p className="text-gray-600">{project.description}</p>
-          <button
-            onClick={() => onClick(project)}
-            className="mt-2 text-blue-500 hover:underline"
-          >
-            View Details
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  );
-  
 
-  const ProjectModal = ({ project, onClose }) => (
-    <motion.div
-      className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="bg-white rounded-lg w-11/12 sm:w-3/4 lg:w-1/2 p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">{project.name}</h2>
-        <p className="text-gray-600 mb-4">{project.description}</p>
-        <p className="text-gray-600 mb-4"><strong>Main Tech Stack:</strong> {project.techStack}</p>
-        <p className="text-gray-600 mb-4"><strong>Challenges Faced:</strong> {project.challenges}</p>
-        <p className="text-gray-600 mb-4"><strong>Improvements Planned:</strong> {project.improvements}</p>
-        <p className="text-gray-600 mb-4"><strong>Live Link:</strong> <a href={project.liveLink} className="text-blue-500 hover:underline">{project.liveLink}</a></p>
-        <p className="text-gray-600 mb-4"><strong>GitHub Link:</strong> <a href={project.githubLink} className="text-blue-500 hover:underline">{project.githubLink}</a></p>
+// Project Card Component
+const ProjectCard = ({ project, onClick }) => (
+  <motion.div
+    className="w-full sm:w-1/2 lg:w-1/3 p-4"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <img
+        src={project.image}
+        alt={project.name}
+        className="w-full h-48 object-cover"
+      />
+      <div className="p-4">
+        <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
+        <p className="text-gray-600">{project.description}</p>
         <button
-          onClick={onClose}
-          className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          onClick={() => onClick(project)}
+          className="mt-3 text-blue-600 btn bg-orange-400 border-none text-base font-medium hover:bg-orange-500"
         >
-          Close
+          View Details
         </button>
       </div>
-    </motion.div>
-  );
-  
+    </div>
+  </motion.div>
+);
 
+// Project Modal Component
+const ProjectModal = ({ project, onClose }) => (
+  <motion.div
+    className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-6 relative max-h-[90vh] overflow-y-auto">
+      {/* Close Button */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 text-black hover:text-red-600 text-2xl"
+        aria-label="Close Modal"
+      >
+        &times;
+      </button>
+
+      {/* Project Image */}
+      <img
+        src={project.image}
+        alt={project.name}
+        className="w-full h-48 sm:h-60 object-cover rounded-lg mb-4"
+      />
+
+      {/* Title & Description */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">{project.name}</h2>
+      <p className="text-gray-700 mb-4 text-sm sm:text-base">{project.description}</p>
+
+      {/* Details Section */}
+      <div className="space-y-3 text-sm sm:text-base">
+        <p>
+          <strong className="text-gray-800">Main Tech Stack:</strong>{' '}
+          <span className="text-gray-600">{project.techStack}</span>
+        </p>
+        <p>
+          <strong className="text-gray-800">Challenges Faced:</strong>{' '}
+          <span className="text-gray-600">{project.challenges}</span>
+        </p>
+        <p>
+          <strong className="text-gray-800">Improvements Planned:</strong>{' '}
+          <span className="text-gray-600">{project.improvements}</span>
+        </p>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="mt-6 flex flex-col sm:flex-row sm:justify-start gap-3 sm:gap-4">
+        <a
+          href={project.liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white text-sm px-5 py-2 rounded hover:bg-blue-700 transition text-center"
+        >
+          🔗 View Live
+        </a>
+        <a
+          href={project.githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gray-800 text-white text-sm px-5 py-2 rounded hover:bg-gray-900 transition text-center"
+        >
+          💻 GitHub Repo
+        </a>
+      </div>
+    </div>
+  </motion.div>
+);
+
+
+// Main Projects Component
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       name: 'Project One',
-      image: 'https://img.freepik.com/free-photo/merchant-giving-package-courier_482257-90451.jpg?ga=GA1.1.1062747228.1733425109&semt=ais_hybrid',
+      image: 'https://img.freepik.com/free-photo/merchant-giving-package-courier_482257-90451.jpg',
       description: 'Brief description of Project One.',
-      techStack: 'Vue.js, Express.js, mongodb, tailwindcss, react-router-dom, ',
+      techStack: 'Vue.js, Express.js, MongoDB, Tailwind CSS, React Router DOM',
       challenges: 'Challenges faced during Project One.',
       improvements: 'Planned improvements for Project One.',
       liveLink: 'https://foodsharing-96323.web.app',
@@ -70,9 +116,9 @@ const Projects = () => {
     },
     {
       name: 'Project Two',
-      image: 'https://img.freepik.com/free-vector/vector-banner-movie-time_107791-8496.jpg?ga=GA1.1.1062747228.1733425109&semt=ais_hybrid',
+      image: 'https://img.freepik.com/free-vector/vector-banner-movie-time_107791-8496.jpg',
       description: 'Brief description of Project Two.',
-      techStack: 'Vue.js, Express.js, mongodb, tailwindcss, react-router-dom, ',
+      techStack: 'Vue.js, Express.js, MongoDB, Tailwind CSS, React Router DOM',
       challenges: 'Challenges faced during Project Two.',
       improvements: 'Planned improvements for Project Two.',
       liveLink: 'https://movie-portal-9cc54.web.app',
@@ -80,9 +126,9 @@ const Projects = () => {
     },
     {
       name: 'Project Three',
-      image: 'https://img.freepik.com/free-vector/flat-people-taking-photos-monkey_23-2149012394.jpg?ga=GA1.1.1062747228.1733425109&semt=ais_hybrid',
+      image: 'https://img.freepik.com/free-vector/flat-people-taking-photos-monkey_23-2149012394.jpg',
       description: 'Brief description of Project Three.',
-      techStack: 'Vue.js, Express.js, mongodb, tailwindcss, react-router-dom, ',
+      techStack: 'Vue.js, Express.js, MongoDB, Tailwind CSS, React Router DOM',
       challenges: 'Challenges faced during Project Three.',
       improvements: 'Planned improvements for Project Three.',
       liveLink: 'https://eco-adventure-3a30f.web.app',
@@ -91,9 +137,9 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 bg-gray-100">
+    <section id="projects" className="py-16 bg-gray-900 text-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">My Projects</h2>
+        <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
         <div className="flex flex-wrap -mx-4">
           {projects.map((project) => (
             <ProjectCard
@@ -104,6 +150,8 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal */}
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
