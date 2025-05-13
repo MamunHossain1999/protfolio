@@ -1,5 +1,5 @@
 
-import img from '../assets/IMG_20220905_124818.jpg';
+import img from '../assets/docker.webp';
 
 const HeroSection = () => {
   return (

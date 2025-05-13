@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../assets/IMG_20220905_124818.jpg'; 
+import img from '../assets/csss.png'; 
 const About = () => {
   return (
     <section id="about" className="py-16 bg-gray-100">

@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../component/Navbar";
-import Footer from "../component/Footer";
+import Navbar from "../component/navbar/Navbar";
+import Footer from "../component/footer/Footer";
 
 const MainLayOut = () => {
     return (
-        <div className="w-full max-w-screen-lg mx-auto">
+        <div className="w-full mx-auto">
             <Navbar />
             <div>
                 <Outlet />
