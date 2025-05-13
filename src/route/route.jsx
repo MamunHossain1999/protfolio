@@ -5,6 +5,7 @@ import About from "../pages/About";
 import Skil from "../pages/Skil";
 import Project from "../pages/Project";
 import Contact from "../pages/Contact";
+import Services from "../pages/services/Services";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
         {
             path: '/',
             element: <Home/>
+        },
+        {
+            path: '/services',
+            element: <Services/>
         },
         {
             path: '/about',

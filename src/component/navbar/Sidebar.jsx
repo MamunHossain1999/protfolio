@@ -9,7 +9,7 @@ const Sidebar = ({ onClose }) => {
         { to: "/", label: "Home" },
         { to: "/skill", label: "Skills" },
         { to: "/projects", label: "Projects" },
-        { to: "/service", label: "Services" },
+        { to: "/services", label: "Services" },
         { to: "/about", label: "About" },
         { to: "/contact", label: "Contact" },
       ].map(({ to, label }) => (
