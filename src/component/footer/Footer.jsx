@@ -28,6 +28,14 @@ const Footer = () => {
             >
               Front-End Developer
             </motion.h3>
+            <motion.h3
+              className="text-xl text-gray-800 mt-2 font-medium"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              Contact Us +880 1795920956
+            </motion.h3>
           </motion.div>
         </div>
 
