@@ -9,7 +9,7 @@ const Services = () => {
     <section className="container mx-auto" id="service">
       <div className="container">
         <div className="py-10">
-          <h4 className="title text-center text-4xl text-primary">
+          <h4 className="title text-center text-4xl font-semibold mb-6 text-white">
             My Services
           </h4>
           <h3 className="font-semibold md:text-xl text-lg  text-center text-gray-400">

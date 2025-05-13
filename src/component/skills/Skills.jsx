@@ -89,7 +89,7 @@ const Skills = () => {
 
   return (
     <div className="py-20 px-6 sm:px-12 lg:px-24 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white text-center -mb-[140px]">
-      <h2 className="text-5xl font-bold mb-6 text-primary">My Skills</h2>
+      <h2 className="text-4xl font-semibold mb-6 text-white">My Skills</h2>
       <p className="text-lg text-gray-400 mb-16">
         {"<-~-"} Technologies I work with {"-~->"}
       </p>

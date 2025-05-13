@@ -10,7 +10,7 @@ const About = () => {
         {/* Section Title */}
         <div className="text-center mb-8">
           <motion.h4
-            className="text-4xl font-bold text-white mb-4"
+            className="text-4xl font-semibold text-white mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
