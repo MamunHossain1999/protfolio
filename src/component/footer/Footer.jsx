@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-12 mx-auto font-semibold pt-8 bg-orange-400">
-      <div className="container mx-auto flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 py-10">
+    <footer className="w-full py-12 mx-auto font-semibold pt-8 px-5  bg-orange-400">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 py-10 ">
         <div className="lg:w-1/3">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -78,7 +78,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 transition-colors duration-200 hover:text-[#0dccf2] text-sm"
+                  className="text-gray-600 transition-colors duration-200 hover:text-[#0dccf2] text-base"
                 >
                   Privacy
                 </Link>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/"
-                  className="text-gray-600 transition-colors duration-200 hover:text-[#9cadb1] text-sm"
+                  className="text-gray-600 transition-colors duration-200 hover:text-[#9cadb1] text-base"
                 >
                   Terms of Service
                 </Link>
